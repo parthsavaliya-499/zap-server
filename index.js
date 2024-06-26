@@ -1,10 +1,12 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const morgan = require('morgan'); // Import morgan
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
+app.use(morgan('tiny')); // Use morgan for logging
 
 let hooks = [];
 
